@@ -1,0 +1,13 @@
+
+S
+java:S1068	"1Remove this unused "identificador" private field.(öù¹¶ÿÿÿÿÿ8ı’ÍÿÍ.
+S
+java:S1068"1Remove this unused "participantes" private field.(»½¼ğşÿÿÿÿ8—¦ÓÿÍ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¯Í—øÿÿÿÿ
+J
+java:S1068
+"-Remove this unused "startDate" private field.(­Ãé„8ªıÏÿÍ.
+M
+java:S1068"+Remove this unused "endDate" private field.(³ÁÎüşÿÿÿÿ8ªıÏÿÍ.
+O
+java:S1068"-Remove this unused "miniJuego" private field.(ê†ø¤ıÿÿÿÿ8—Ñ×ÿÍ.
