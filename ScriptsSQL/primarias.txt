@@ -1,0 +1,29 @@
+ALTER TABLE usuarios ADD CONSTRAINT pk_usuario
+PRIMARY KEY (id);
+
+ALTER TABLE clientes ADD CONSTRAINT pk_cliente
+PRIMARY KEY (user_name);
+
+ALTER TABLE asociaciones ADD CONSTRAINT pk_asociacion
+PRIMARY KEY (nit);
+
+ALTER TABLE objetos ADD CONSTRAINT pk_objeto
+PRIMARY KEY (nit);
+
+ALTER TABLE imagenes ADD CONSTRAINT pk_imagen
+PRIMARY KEY (id_imagen);
+
+ALTER TABLE publicaciones ADD CONSTRAINT pk_publicaciones
+PRIMARY KEY (id);
+
+ALTER TABLE participaciones ADD CONSTRAINT pk_participaciones
+PRIMARY KEY (id_usuario,id_publicacion);
+
+ALTER TABLE reciclajes ADD CONSTRAINT pk_reciclajes
+PRIMARY KEY (id_publicacion);
+
+ALTER TABLE fiestas ADD CONSTRAINT pk_fiestas
+PRIMARY KEY (id_publicacion);
+
+
+
