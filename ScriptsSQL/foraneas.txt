@@ -1,0 +1,35 @@
+ALTER TABLE clientes ADD CONSTRAINT fk_cliente_usuario
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id);
+
+ALTER TABLE asociaciones ADD CONSTRAINT fk_asociacion_usuario
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id);
+
+ALTER TABLE objeto ADD CONSTRAINT fk_objeto_usuario
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id);
+
+ALTER TABLE publicaciones ADD CONSTRAINT fk_publicacion_usuario
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id);
+
+ALTER TABLE participaciones ADD CONSTRAINT fk_participacion_usuario
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id);
+
+ALTER TABLE participaciones ADD CONSTRAINT fk_participacion_publicacion
+FOREIGN KEY (id_publicacion) REFERENCES publicacion(id);
+
+ALTER TABLE intercambios ADD CONSTRAINT fk_intercambios_publicacion
+FOREIGN KEY (id_publicacion) REFERENCES publicacion(id);
+
+ALTER TABLE fiestas ADD CONSTRAINT fk_fiestas_publicacion
+FOREIGN KEY (id_publicacion) REFERENCES publicacion(id);
+
+ALTER TABLE reciclajes ADD CONSTRAINT fk_reciclaje_publicacion
+FOREIGN KEY (id_publicacion) REFERENCES publicacion(id);
+
+ALTER TABLE reciclajes ADD CONSTRAINT fk_reciclaje_asociacion
+FOREIGN KEY (nit_asociacion) REFERENCES asociaciones(nit);
+
+ALTER TABLE imagenes ADD CONSTRAINT fk_imagen_objeto
+FOREIGN KEY (id_objeto) REFERENCES objeto(id);
+
+
+ 

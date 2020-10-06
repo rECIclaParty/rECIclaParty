@@ -52,7 +52,8 @@ id_publicacion: NUMBER(10) NOT NULL,
 
 CREATE TABLE reciclajes
 (id_publicacion: VARCHAR(20) NOT NULL,
-fecha: DATE NOT NULL
+fecha: DATE NOT NULL,
+nit_asociacion: VARCHAR(15) NOT NULL,
 );
 
 CREATE TABLE fiestas
