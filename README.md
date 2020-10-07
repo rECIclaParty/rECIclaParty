@@ -22,6 +22,22 @@ Cada vez que crees una publicación recibirás una cierta cantidad de puntos, de
 
 También podrás contactarte con una asociación para donar el reciclaje que tengas en casa y así ayudar al medioambiente (esto también da puntos).
 
+## Diagrama de clases
+
+![diagramaclases](imagenes/diagramaclases.png)
+
+## Diagrama entidad relación de base de datos extendida
+
+![bd](imagenes/bd.png)
+
+## Diagrama casos de uso
+
+![casosdeuso](imagenes/casosdeuso.png)
+
+## Diagrama de componentes
+
+![diagramacomponentes](imagenes/diagramacomponentes.png)
+
 
 
 
