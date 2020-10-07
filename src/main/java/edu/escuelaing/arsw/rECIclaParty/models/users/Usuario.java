@@ -15,6 +15,8 @@ public class Usuario {
     private String telefono;
     private String nacimiento;
 
+    public Usuario(){}
+
     public Usuario(String nombre, String correo, Genero genero, String telefono, String nacimiento) {
         this.nombre = nombre;
         this.correo = correo;
@@ -22,9 +24,7 @@ public class Usuario {
         this.telefono = telefono;
         this.nacimiento = nacimiento;
     }
-    public Usuario(){
 
-    };
 
     public int getId() {
         return id;
