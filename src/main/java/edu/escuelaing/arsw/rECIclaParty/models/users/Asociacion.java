@@ -7,9 +7,6 @@ public class Asociacion extends Usuario {
     private String NIT;
     private String razonSocial;
     private List<Sede> sedes;
-    private Genero genero;
-    private String telefono;
-    private Date nacimiento;
 
     public String getNIT() {
         return NIT;
@@ -35,33 +32,6 @@ public class Asociacion extends Usuario {
         this.sedes = sedes;
     }
 
-    @Override
-    public Genero getGenero() {
-        return genero;
-    }
 
-    @Override
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
 
-    @Override
-    public String getTelefono() {
-        return telefono;
-    }
-
-    @Override
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    @Override
-    public Date getNacimiento() {
-        return nacimiento;
-    }
-
-    @Override
-    public void setNacimiento(Date nacimiento) {
-        this.nacimiento = nacimiento;
-    }
 }

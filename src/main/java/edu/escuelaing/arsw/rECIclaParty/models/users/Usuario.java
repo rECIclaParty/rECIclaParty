@@ -1,14 +1,30 @@
 package edu.escuelaing.arsw.rECIclaParty.models.users;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre;
     private String correo;
     private Genero genero;
     private String telefono;
-    private Date nacimiento;
+    private String nacimiento;
+
+    public Usuario(String nombre, String correo, Genero genero, String telefono, String nacimiento) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.genero = genero;
+        this.telefono = telefono;
+        this.nacimiento = nacimiento;
+    }
+    public Usuario(){
+
+    };
 
     public int getId() {
         return id;
@@ -50,11 +66,23 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", genero=" + genero +
+                ", telefono='" + telefono + '\'' +
+                ", nacimiento=" + nacimiento +
+                '}';
     }
 }
