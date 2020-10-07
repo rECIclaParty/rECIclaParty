@@ -1,1 +1,16 @@
+edu\escuelaing\arsw\rECIclaParty\models\services\Fiesta.class
+edu\escuelaing\arsw\rECIclaParty\models\services\Intercambio.class
+edu\escuelaing\arsw\rECIclaParty\models\services\Reciclaje.class
+edu\escuelaing\arsw\rECIclaParty\models\users\Genero.class
+edu\escuelaing\arsw\rECIclaParty\models\services\ClientRepository.class
+edu\escuelaing\arsw\rECIclaParty\models\users\Cliente.class
+edu\escuelaing\arsw\rECIclaParty\models\users\Usuario.class
+edu\escuelaing\arsw\rECIclaParty\models\services\Valoracion.class
+edu\escuelaing\arsw\rECIclaParty\models\services\MiniJuego.class
+edu\escuelaing\arsw\rECIclaParty\models\users\Asociacion.class
+edu\escuelaing\arsw\rECIclaParty\models\services\Estado.class
 edu\escuelaing\arsw\rECIclaParty\App.class
+edu\escuelaing\arsw\rECIclaParty\models\services\UserRepository.class
+edu\escuelaing\arsw\rECIclaParty\web\Control.class
+edu\escuelaing\arsw\rECIclaParty\models\services\Publicacion.class
+edu\escuelaing\arsw\rECIclaParty\models\users\Sede.class

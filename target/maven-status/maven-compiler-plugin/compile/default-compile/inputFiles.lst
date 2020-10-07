@@ -1,14 +1,16 @@
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\MiniJuego.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Asociacion.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Sede.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Estado.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Fiesta.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Valoracion.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\App.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\web\Control.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Cliente.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Genero.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Usuario.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Intercambio.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Publicacion.java
-C:\Users\USER\Desktop\ARSW revenge\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Reciclaje.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Usuario.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Asociacion.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\UserRepository.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Cliente.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Genero.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Intercambio.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Publicacion.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\web\Control.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\App.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\ClientRepository.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Reciclaje.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\users\Sede.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Fiesta.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Estado.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\MiniJuego.java
+C:\Users\USER\Desktop\ARSW\PROYECTO ARSW ESTE SI ES\rECIclaParty\src\main\java\edu\escuelaing\arsw\rECIclaParty\models\services\Valoracion.java
