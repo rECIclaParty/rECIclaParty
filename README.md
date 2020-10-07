@@ -32,6 +32,7 @@ También podrás contactarte con una asociación para donar el reciclaje que ten
 
 ![diagramaclases](imagenes/diagramaclases.png)
 
+
 ## Diagrama entidad relación de base de datos extendida
 
 ![bd](imagenes/bd.png)
@@ -44,9 +45,26 @@ También podrás contactarte con una asociación para donar el reciclaje que ten
 
 ![diagramacomponentes](imagenes/diagramacomponentes.png)
 
+## Diseño Vistas
 
+![](imagenes/mockups/1.png)
 
+![](imagenes/mockups/2.png)
 
+![](imagenes/mockups/3.png)
 
+![](imagenes/mockups/4.png)
 
+![](imagenes/mockups/5.png)
 
+![](imagenes/mockups/6.png)
+
+![](imagenes/mockups/7.png)
+
+![](imagenes/mockups/8.png)
+
+![](imagenes/mockups/9.png)
+
+![](imagenes/mockups/10.png)
+
+![](imagenes/mockups/11.png)
