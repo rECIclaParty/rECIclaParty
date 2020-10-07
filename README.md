@@ -2,7 +2,9 @@
 ## Integrantes
 
 Juan Carlos Garcia Garzon
+
 German Simon Marin Mejia
+
 Edwin Yesid Rodriguez Maldonado
 
 ## Resumen
