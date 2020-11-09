@@ -9,12 +9,14 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import edu.eci.arsw.reciclaparty.exception.ResourceNotFoundException;
+import edu.eci.arsw.reciclaparty.model.services.Publicacion;
 import edu.eci.arsw.reciclaparty.model.users.Empleado;
 import edu.eci.arsw.reciclaparty.model.users.User;
 import edu.eci.arsw.reciclaparty.repository.users.EmpleadoRepository;
 import edu.eci.arsw.reciclaparty.repository.users.UserRepository;
 
 
+import edu.eci.arsw.reciclaparty.services.PublicacionServices;
 import edu.eci.arsw.reciclaparty.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -28,6 +30,11 @@ public class UserController {
     @Autowired
     @Qualifier("IUserServices")
     private UserServices uss;
+
+
+    @Autowired
+    @Qualifier("IPublicacionServices")
+    private PublicacionServices publicacionServices;
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
@@ -92,4 +99,10 @@ public class UserController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+
+    @GetMapping("/publications")
+    public List<Publicacion> getAllPublications(){
+        return publicacionServices.getAllPublicaciones();
+    }
+
 }

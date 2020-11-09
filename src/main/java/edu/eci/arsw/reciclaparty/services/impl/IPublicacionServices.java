@@ -7,10 +7,12 @@ import edu.eci.arsw.reciclaparty.repository.services.FiestaRepository;
 import edu.eci.arsw.reciclaparty.repository.services.PublicacionRepository;
 import edu.eci.arsw.reciclaparty.services.PublicacionServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component("IPublicacionServices")
 public class IPublicacionServices implements PublicacionServices {
     @Autowired
     private PublicacionRepository publicacionRepository;
@@ -20,7 +22,7 @@ public class IPublicacionServices implements PublicacionServices {
 
     @Override
     public List<Publicacion> getAllPublicaciones() {
-        return publicacionRepository.findAll();
+        return publicacionRepository.findAllOnlyOne();
     }
 
     @Override
