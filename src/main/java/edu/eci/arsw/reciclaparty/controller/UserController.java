@@ -45,6 +45,18 @@ public class UserController {
         return ResponseEntity.ok().body(user);
     }
 
+    @GetMapping("/users/{id}/points")
+    public ResponseEntity<String> getPointsByUser(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
+        String info = uss.getPoints(userId);
+        return ResponseEntity.ok().body(info);
+    }
+
+    @GetMapping("/users/{id}/points/{points}")
+    public ResponseEntity<String> getPointsByUser(@PathVariable(value = "id") UUID userId, @PathVariable(value = "points") int points) throws ResourceNotFoundException {
+        uss.addPointsToUser(userId,points);
+        return ResponseEntity.ok().body("UUID: "+userId+", points: "+points);
+    }
+
     @GetMapping("/employees/{id}")
     public ResponseEntity<Empleado> getEmployeeById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
         Empleado employee = uss.getEmployeeById(userId);
@@ -92,4 +104,7 @@ public class UserController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+
+
+
 }

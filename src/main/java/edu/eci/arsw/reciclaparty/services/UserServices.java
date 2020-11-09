@@ -10,6 +10,7 @@ import java.util.UUID;
 
 public interface UserServices {
 
+    /*Principales Servicios*/
     List<User> getAllUsers();
     List<Empleado> getAllEmployees();
     User getUserById(UUID userId) throws ResourceNotFoundException;
@@ -21,5 +22,7 @@ public interface UserServices {
     void deleteUser(UUID userId) throws  ResourceNotFoundException;
     void deleteEmpleado(UUID employeeId) throws  ResourceNotFoundException;
 
-
+    /*Servicios Añadidos*/
+    String getPoints(UUID userId) throws  ResourceNotFoundException;
+    boolean addPointsToUser(UUID userId, int points) throws ResourceNotFoundException;
 }

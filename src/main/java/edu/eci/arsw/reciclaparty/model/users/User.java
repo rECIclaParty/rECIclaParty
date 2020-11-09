@@ -102,6 +102,10 @@ public class User {
         this.puntos = puntos;
     }
 
+    public boolean addPuntos(int puntos){
+        this.puntos+=puntos;
+        return true;
+    }
     @Override
     public String toString() {
         return "User{" +
