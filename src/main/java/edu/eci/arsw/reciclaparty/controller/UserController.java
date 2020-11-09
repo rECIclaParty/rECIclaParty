@@ -9,12 +9,13 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import edu.eci.arsw.reciclaparty.exception.ResourceNotFoundException;
+import edu.eci.arsw.reciclaparty.model.services.Fiesta;
+import edu.eci.arsw.reciclaparty.model.services.Publicacion;
 import edu.eci.arsw.reciclaparty.model.users.Empleado;
 import edu.eci.arsw.reciclaparty.model.users.User;
-import edu.eci.arsw.reciclaparty.repository.users.EmpleadoRepository;
-import edu.eci.arsw.reciclaparty.repository.users.UserRepository;
 
 
+import edu.eci.arsw.reciclaparty.services.PublicacionServices;
 import edu.eci.arsw.reciclaparty.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -28,6 +29,11 @@ public class UserController {
     @Autowired
     @Qualifier("IUserServices")
     private UserServices uss;
+
+
+    @Autowired
+    @Qualifier("IPublicacionServices")
+    private PublicacionServices publicacionServices;
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
@@ -105,6 +111,30 @@ public class UserController {
         return response;
     }
 
+    @GetMapping("/publications")
+    public List<Publicacion> getAllPublications(){
+        return publicacionServices.getAllPublicaciones();
+    }
+
+    @GetMapping("/publications/{id}")
+    public List<Publicacion> getAllPublicationsByUser(@PathVariable(value = "id") UUID userId){
+        return publicacionServices.getAllPublicacionesByUser(userId);
+    }
+
+    @PostMapping("/publications")
+    public Publicacion createPublication(@Valid @RequestBody Publicacion publicacion) {
+        return publicacionServices.addPublicacion(publicacion);
+    }
+
+    @GetMapping("/parties")
+    public List<Fiesta> getAllParties(){
+        return publicacionServices.getAllFiestas();
+    }
+
+    @GetMapping("/parties/{id}")
+    public List<Publicacion> getAllPartiesByUser(@PathVariable(value = "id") UUID userId){
+        return publicacionServices.getAllFiestasByUser(userId);
+    }
 
 
 }
