@@ -15,7 +15,9 @@ import edu.eci.arsw.reciclaparty.repository.users.EmpleadoRepository;
 import edu.eci.arsw.reciclaparty.repository.users.UserRepository;
 
 
+import edu.eci.arsw.reciclaparty.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,56 +26,68 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private EmpleadoRepository empleadoRepository;
+    @Qualifier("IUserServices")
+    private UserServices uss;
 
     @GetMapping("/users")
     public List<User> getAllUsers() {
-        return userRepository.findAllOnlyOne();
+        return uss.getAllUsers();
     }
 
-    @GetMapping("/otherUsers")
-    public List<Empleado> getAllOtherUsers() {
-        return empleadoRepository.findAll();
+    @GetMapping("/employees")
+    public List<Empleado> getAllEmployees() {
+        return uss.getAllEmployees();
     }
 
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
-        User user = userRepository.findByIdOnlyOne(userId)
-                                    .orElseThrow(() ->
-                                            new ResourceNotFoundException("Employee not found for this id :: " + userId));
+        User user = uss.getUserById(userId);
         return ResponseEntity.ok().body(user);
+    }
+
+    @GetMapping("/employees/{id}")
+    public ResponseEntity<Empleado> getEmployeeById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
+        Empleado employee = uss.getEmployeeById(userId);
+        return ResponseEntity.ok().body(employee);
     }
 
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user) {
-        return userRepository.save(user);
+        return uss.addUser(user);
     }
 
-    @PostMapping("/otherUsers")
-    public Empleado createOtherUser(@Valid @RequestBody Empleado user) {
-        return empleadoRepository.save(user);
+    @PostMapping("/employees")
+    public Empleado createOtherUser(@Valid @RequestBody Empleado employee) {
+        return uss.addEmployee(employee);
     }
 
-    @PutMapping("/employees/{id}")
+    @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUser(@PathVariable(value = "id") UUID userId,
                                                    @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
 
-        user.setCorreo(userDetails.getCorreo());
-        final User updatedUser = userRepository.save(user);
+        final User updatedUser = uss.updateUser(userDetails,userId);
         return ResponseEntity.ok(updatedUser);
+    }
+
+    @PutMapping("/employee/{id}")
+    public ResponseEntity<Empleado> updateEmployee(@PathVariable(value = "id") UUID employeeId,
+                                           @Valid @RequestBody Empleado employeeDetails) throws ResourceNotFoundException {
+
+        final Empleado updatedEmployee = uss.updateEmployee(employeeDetails,employeeId);
+        return ResponseEntity.ok(updatedEmployee);
     }
 
     @DeleteMapping("/users/{id}")
     public Map<String, Boolean> deleteUser(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
+        uss.deleteUser(userId);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
 
-        userRepository.delete(user);
+    @DeleteMapping("/employees/{id}")
+    public Map<String, Boolean> deleteEmployees(@PathVariable(value = "id") UUID employeeId) throws ResourceNotFoundException {
+        uss.deleteEmpleado(employeeId);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return response;

@@ -61,7 +61,8 @@ public class IUserServices implements UserServices {
     public User updateUser(User usuario, UUID userId) throws ResourceNotFoundException {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
-
+        user.setNombre(usuario.getNombre());
+        user.setTelefono(usuario.getTelefono());
         user.setCorreo(usuario.getCorreo());
         return userRepository.save(user);
     }
@@ -70,7 +71,8 @@ public class IUserServices implements UserServices {
     public Empleado updateEmployee(Empleado empleado, UUID employeeId) throws ResourceNotFoundException {
         Empleado employee = empleadoRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.EMPLOYEE_NOT_FOUND+ employeeId));
-
+        employee.setNombre(empleado.getNombre());
+        employee.setTelefono(empleado.getTelefono());
         employee.setCorreo(empleado.getCorreo());
         return empleadoRepository.save(employee);
     }
