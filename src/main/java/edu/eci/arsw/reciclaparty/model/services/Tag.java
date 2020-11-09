@@ -1,55 +1,45 @@
 package edu.eci.arsw.reciclaparty.model.services;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "tag")
 public class Tag {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long objeto;
-    private long valor;
+    private UUID id = UUID.randomUUID();
+    private String descripcion;
 
     public Tag(){}
 
-    public Tag(long objeto, long valor) {
-        this.objeto = objeto;
-        this.valor = valor;
+    public Tag(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public long getObjeto() {
-        return objeto;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setObjeto(long objeto) {
-        this.objeto = objeto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public long getValor() {
-        return valor;
-    }
-
-    public void setValor(long valor) {
-        this.valor = valor;
-    }
 
     @Override
     public String toString() {
         return "Tag{" +
                 "id=" + id +
-                ", objeto=" + objeto +
-                ", valor=" + valor +
+                ", descripcion='" + descripcion + '\'' +
                 '}';
     }
-
 }

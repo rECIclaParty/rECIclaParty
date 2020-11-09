@@ -4,31 +4,32 @@ package edu.eci.arsw.reciclaparty.model.users;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name="empleado")
 public class Empleado extends User{
 
-    private String asociacion;
+    private UUID asociacion;
 
     public Empleado(){
 
     }
 
-    public Empleado(String asociacion) {
+    public Empleado(UUID asociacion) {
         this.asociacion = asociacion;
     }
 
-    public Empleado(String nombre, String password, String correo, String telefono, Genre genero, Date nacimiento, int puntos, String asociacion) {
+    public Empleado(String nombre, String password, String correo, String telefono, Genre genero, Date nacimiento, int puntos, UUID asociacion) {
         super(nombre, password, correo, telefono, genero, nacimiento, puntos);
         this.asociacion = asociacion;
     }
 
-    public String getAsociacion() {
+    public UUID getAsociacion() {
         return asociacion;
     }
 
-    public void setAsociacion(String asociacion) {
+    public void setAsociacion(UUID asociacion) {
         this.asociacion = asociacion;
     }
 

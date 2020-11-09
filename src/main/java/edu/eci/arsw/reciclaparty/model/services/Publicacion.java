@@ -2,6 +2,7 @@ package edu.eci.arsw.reciclaparty.model.services;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -10,8 +11,7 @@ import java.util.UUID;
 
 public class Publicacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private Date fecha;
     private Estado estado;
     private int objeto;

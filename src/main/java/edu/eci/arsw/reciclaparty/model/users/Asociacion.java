@@ -4,12 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "asociacion")
 public class Asociacion{
 
     @Id
+    private UUID id = UUID.randomUUID();
     private String nit;
     private String nombre;
     private String telefono;
@@ -24,6 +26,14 @@ public class Asociacion{
         this.telefono = telefono;
         this.direccion = direccion;
         this.imagen = imagen;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getNit() {

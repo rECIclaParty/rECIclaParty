@@ -1,14 +1,14 @@
 package edu.eci.arsw.reciclaparty.model.services;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name="objeto")
 public class Objeto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private UUID id = UUID.randomUUID();
     private String nombre;
     private String imagen;
     private String descripcion;
@@ -22,11 +22,11 @@ public class Objeto {
         this.descripcion = descripcion;
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

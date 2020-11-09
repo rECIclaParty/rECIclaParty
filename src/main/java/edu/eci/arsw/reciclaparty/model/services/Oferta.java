@@ -2,14 +2,14 @@ package edu.eci.arsw.reciclaparty.model.services;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "oferta")
 public class Oferta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private UUID id = UUID.randomUUID();
 
     private long empleado;
     private long publicacion;
@@ -26,6 +26,14 @@ public class Oferta {
         this.puntos = puntos;
         this.fecha = fecha;
         this.estado = estado;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public long getEmpleado() {
