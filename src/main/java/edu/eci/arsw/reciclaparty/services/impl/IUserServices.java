@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @Component("IUserServices")
@@ -42,7 +43,7 @@ public class IUserServices implements UserServices {
     }
 
     @Override
-    public User updateUser(User usuario, long userId) throws ResourceNotFoundException {
+    public User updateUser(User usuario, UUID userId) throws ResourceNotFoundException {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
 
@@ -52,7 +53,7 @@ public class IUserServices implements UserServices {
     }
 
     @Override
-    public Empleado updateEmployee(Empleado empleado, long employeeId) throws ResourceNotFoundException {
+    public Empleado updateEmployee(Empleado empleado, UUID employeeId) throws ResourceNotFoundException {
         Empleado employee = empleadoRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 

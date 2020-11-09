@@ -3,14 +3,14 @@ package edu.eci.arsw.reciclaparty.model.users;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "usuario")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private long id;
+    private UUID id = UUID.randomUUID();
     @Column(nullable = false)
     private String nombre;
     @Column(name = "contrasena",nullable = false)
@@ -36,11 +36,11 @@ public class User {
         this.puntos = puntos;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

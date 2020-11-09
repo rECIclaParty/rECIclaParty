@@ -1,5 +1,0 @@
-ALTER TABLE usuarios ADD CONSTRAINT uk_usuario_correo
-UNIQUE (correo);
-
-ALTER TABLE usuarios ADD CONSTRAINT uk_usuarios_telefono
-UNIQUE (telefono);

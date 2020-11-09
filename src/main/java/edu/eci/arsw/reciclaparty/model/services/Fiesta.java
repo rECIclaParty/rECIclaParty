@@ -27,7 +27,7 @@ public class Fiesta extends Publicacion {
         this.actividad = actividad;
     }
 
-    public Fiesta(Date fecha, Estado estado, int objeto, String usuario, int participantes, Date hora_inicio, Date hora_final, int puntos, int actividad) {
+    public Fiesta(Date fecha, Estado estado, int objeto, long usuario, int participantes, Date hora_inicio, Date hora_final, int puntos, int actividad) {
         super(fecha, estado, objeto, usuario);
         this.participantes = participantes;
         this.hora_inicio = hora_inicio;

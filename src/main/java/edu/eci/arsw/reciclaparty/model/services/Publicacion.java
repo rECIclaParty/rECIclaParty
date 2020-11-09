@@ -2,6 +2,7 @@ package edu.eci.arsw.reciclaparty.model.services;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name="publicacion")
@@ -9,29 +10,29 @@ import java.util.Date;
 
 public class Publicacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private UUID id;
     private Date fecha;
     private Estado estado;
     private int objeto;
-    private String usuario;
+    private long usuario;
 
 
     public Publicacion(){
 
     }
-    public Publicacion(Date fecha, Estado estado, int objeto, String usuario) {
+    public Publicacion(Date fecha, Estado estado, int objeto, long usuario) {
         this.fecha = fecha;
         this.estado = estado;
         this.objeto = objeto;
         this.usuario = usuario;
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -59,11 +60,11 @@ public class Publicacion {
         this.objeto = objeto;
     }
 
-    public String getUsuario() {
+    public long getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(long usuario) {
         this.usuario = usuario;
     }
 

@@ -6,6 +6,7 @@ import edu.eci.arsw.reciclaparty.model.users.Empleado;
 import edu.eci.arsw.reciclaparty.model.users.User;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface UserServices {
 
@@ -13,8 +14,9 @@ public interface UserServices {
     List<Empleado> getAllEmployees();
     User addUser(User user);
     Empleado addEmployee(Empleado empleado);
-    User updateUser(User user, long userId) throws ResourceNotFoundException;
-    Empleado updateEmployee(Empleado empleado, long employeeId) throws ResourceNotFoundException;
+    User updateUser(User user, UUID userId) throws ResourceNotFoundException;
+    Empleado updateEmployee(Empleado empleado, UUID employeeId) throws ResourceNotFoundException;
+
 
 
 

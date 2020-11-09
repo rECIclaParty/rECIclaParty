@@ -4,6 +4,7 @@ package edu.eci.arsw.reciclaparty.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -39,8 +40,8 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
-        User user = userRepository.findById(userId)
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
+        User user = userRepository.findByIdOnlyOne(userId)
                                     .orElseThrow(() ->
                                             new ResourceNotFoundException("Employee not found for this id :: " + userId));
         return ResponseEntity.ok().body(user);
@@ -57,7 +58,7 @@ public class UserController {
     }
 
     @PutMapping("/employees/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long userId,
+    public ResponseEntity<User> updateUser(@PathVariable(value = "id") UUID userId,
                                                    @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
@@ -68,7 +69,7 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
-    public Map<String, Boolean> deleteUser(@PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
+    public Map<String, Boolean> deleteUser(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
 
