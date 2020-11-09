@@ -1,5 +1,6 @@
 package edu.eci.arsw.reciclaparty.model.services;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,8 +11,14 @@ import java.util.UUID;
 public class PublicacionXTag {
     @Id
     private UUID id = UUID.randomUUID();
+    @Column(name="id_publicacion")
     private UUID idPublicacion;
+    @Column(name="id_tag")
     private UUID idTag;
+
+    public PublicacionXTag(){
+
+    }
 
     public PublicacionXTag(UUID idPublicacion, UUID idTag) {
         this.idPublicacion = idPublicacion;

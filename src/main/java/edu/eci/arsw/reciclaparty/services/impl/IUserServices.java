@@ -62,4 +62,20 @@ public class IUserServices implements UserServices {
         return updatedEmployee;
     }
 
+    @Override
+    public void deleteUser(UUID userId) throws ResourceNotFoundException {
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
+        userRepository.delete(user);
+    }
+
+    @Override
+    public void deleteEmpleado(UUID employeeId) throws ResourceNotFoundException {
+        Empleado employee = userRepository.findById(employeeId)
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
+        userRepository.delete(employee);
+    }
+
+
 }

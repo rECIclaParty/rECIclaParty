@@ -16,6 +16,8 @@ public interface UserServices {
     Empleado addEmployee(Empleado empleado);
     User updateUser(User user, UUID userId) throws ResourceNotFoundException;
     Empleado updateEmployee(Empleado empleado, UUID employeeId) throws ResourceNotFoundException;
+    void deleteUser(UUID userId) throws  ResourceNotFoundException;
+    void deleteEmpleado(UUID employeeId) throws  ResourceNotFoundException;
 
 
 
