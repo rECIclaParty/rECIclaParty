@@ -24,12 +24,27 @@ public class IUserServices implements UserServices {
 
     @Override
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userRepository.findAllOnlyOne();
     }
 
     @Override
     public List<Empleado> getAllEmployees() {
         return empleadoRepository.findAll();
+    }
+
+    @Override
+    public User getUserById(UUID userId) throws ResourceNotFoundException {
+        return userRepository.findByIdOnlyOne(userId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
+
+    }
+
+    @Override
+    public Empleado getEmployeeById(UUID employeeId) throws ResourceNotFoundException {
+        return empleadoRepository.findById(employeeId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(ResourceNotFoundException.EMPLOYEE_NOT_FOUND + employeeId));
     }
 
     @Override
@@ -45,36 +60,34 @@ public class IUserServices implements UserServices {
     @Override
     public User updateUser(User usuario, UUID userId) throws ResourceNotFoundException {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
+                .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
 
         user.setCorreo(usuario.getCorreo());
-        final User updatedUser = userRepository.save(user);
-        return updatedUser;
+        return userRepository.save(user);
     }
 
     @Override
     public Empleado updateEmployee(Empleado empleado, UUID employeeId) throws ResourceNotFoundException {
         Empleado employee = empleadoRepository.findById(employeeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+                .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.EMPLOYEE_NOT_FOUND+ employeeId));
 
         employee.setCorreo(empleado.getCorreo());
-        final Empleado updatedEmployee = empleadoRepository.save(employee);
-        return updatedEmployee;
+        return empleadoRepository.save(employee);
     }
 
     @Override
     public void deleteUser(UUID userId) throws ResourceNotFoundException {
 
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
+                .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
         userRepository.delete(user);
     }
 
     @Override
     public void deleteEmpleado(UUID employeeId) throws ResourceNotFoundException {
-        Empleado employee = userRepository.findById(employeeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + userId));
-        userRepository.delete(employee);
+        Empleado employee = empleadoRepository.findById(employeeId)
+                .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.EMPLOYEE_NOT_FOUND + employeeId));
+        empleadoRepository.delete(employee);
     }
 
 
