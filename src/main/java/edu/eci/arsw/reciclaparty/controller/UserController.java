@@ -9,6 +9,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import edu.eci.arsw.reciclaparty.exception.ResourceNotFoundException;
+import edu.eci.arsw.reciclaparty.model.services.Fiesta;
 import edu.eci.arsw.reciclaparty.model.services.Publicacion;
 import edu.eci.arsw.reciclaparty.model.users.Empleado;
 import edu.eci.arsw.reciclaparty.model.users.User;
@@ -104,5 +105,26 @@ public class UserController {
     public List<Publicacion> getAllPublications(){
         return publicacionServices.getAllPublicaciones();
     }
+
+    @GetMapping("/publications/{id}")
+    public List<Publicacion> getAllPublicationsByUser(@PathVariable(value = "id") UUID userId){
+        return publicacionServices.getAllPublicacionesByUser(userId);
+    }
+
+    @PostMapping("/publications")
+    public Publicacion createPublication(@Valid @RequestBody Publicacion publicacion) {
+        return publicacionServices.addPublicacion(publicacion);
+    }
+
+    @GetMapping("/parties")
+    public List<Fiesta> getAllParties(){
+        return publicacionServices.getAllFiestas();
+    }
+
+    @GetMapping("/parties/{id}")
+    public List<Publicacion> getAllPartiesByUser(@PathVariable(value = "id") UUID userId){
+        return publicacionServices.getAllFiestasByUser(userId);
+    }
+
 
 }

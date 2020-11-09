@@ -20,9 +20,9 @@ public interface PublicacionRepository extends JpaRepository<Publicacion, UUID> 
     @Query(value = "select distinct *, 0 AS clazz_ from fiesta", nativeQuery = true)
     List<Fiesta> findAllPartysOnlyOne();
 
-    @Query(value = "select distinct *, 0 AS clazz_ from publicacion where usuario.id = :id", nativeQuery = true)
-    Optional<Publicacion> findPublicacionByIdOnlyOne(@Param("id") UUID id);
+    @Query(value = "select distinct *, 0 AS clazz_ from publicacion where publicacion.usuario = :id", nativeQuery = true)
+    List<Publicacion> findPublicacionByIdOnlyOne(@Param("id") UUID id);
 
-    @Query(value = "select distinct *, 0 AS clazz_ from fiesta where usuario.id = :id", nativeQuery = true)
-    Optional<Publicacion> findFiestaByIdOnlyOne(@Param("id") UUID id);
+    @Query(value = "select distinct *, 0 AS clazz_ from fiesta where fiesta.usuario = :id", nativeQuery = true)
+    List<Publicacion> findFiestaByIdOnlyOne(@Param("id") UUID id);
 }
