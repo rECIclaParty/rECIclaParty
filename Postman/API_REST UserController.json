@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "76f40cc7-93bd-4bd3-998b-f889b20bbb75",
+		"name": "API REST Design rECIclaParty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET USER all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET EMPLEADO all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Pepe\",\r\n    \"correo\":\"Pepe@mail.com\",\r\n    \"genero\":\"HOMBRE\",\r\n    \"telefono\": \"555-555-555\",\r\n    \"nacimiento\":\"2020-11-10\",\r\n    \"password\": \"passwd\",\r\n    \"puntos\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST EMPLEADO Simono",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Simono\",\r\n    \"asociacion\": \"6bbf0744-7434-46b9-bb95-53905df538e7\",\r\n    \"correo\":\"Simono@mail.com\",\r\n    \"genero\":\"HOMBRE\",\r\n    \"telefono\": \"555-555-555\",\r\n    \"nacimiento\":\"2020-11-10\",\r\n    \"password\": \"passwd\",\r\n    \"puntos\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST EMPLEADO Juancho",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Juancho\",\r\n    \"asociacion\": \"6bbf0744-7434-46b9-bb95-53905df538e7\",\r\n    \"correo\":\"juancho@mail.com\",\r\n    \"genero\":\"HOMBRE\",\r\n    \"telefono\": \"555-555-555\",\r\n    \"nacimiento\":\"2020-11-10\",\r\n    \"password\": \"passwd\",\r\n    \"puntos\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/6bbf0744-74b4-46b9-bb05-53905d4538e7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"6bbf0744-74b4-46b9-bb05-53905d4538e7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET USER by ID 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "PUT USER Pepe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"El Pepe\",\r\n    \"correo\":\"pepe_pepe@mail.com\",\r\n    \"genero\":\"HOMBRE\",\r\n    \"telefono\": \"555-111-555\",\r\n    \"nacimiento\":\"2020-11-10\",\r\n    \"password\": \"passwd\",\r\n    \"puntos\": \"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/1676e4a1-acb0-48c7-9c83-a4ac677d2beb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1676e4a1-acb0-48c7-9c83-a4ac677d2beb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT EMPLOYEE Simono",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Simono Marin\",\r\n    \"asociacion\": \"6bbf0744-7434-46b9-bb95-53905df538e7\",\r\n    \"correo\":\"simono@mail.com\",\r\n    \"genero\":\"HOMBRE\",\r\n    \"telefono\": \"555-555-558\",\r\n    \"nacimiento\":\"2020-11-10\",\r\n    \"password\": \"passwd\",\r\n    \"puntos\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees/46bb60a7-d94a-4b7b-8407-274e17f20d24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"46bb60a7-d94a-4b7b-8407-274e17f20d24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER Pepe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/1676e4a1-acb0-48c7-9c83-a4ac677d2beb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1676e4a1-acb0-48c7-9c83-a4ac677d2beb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE EMPLOYEE Juancho",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employees/3762e1d4-a28e-48cc-81c1-72d25b6c2955",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"3762e1d4-a28e-48cc-81c1-72d25b6c2955"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/allWeCanPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/allWeCanPost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"allWeCanPost"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

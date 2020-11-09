@@ -76,7 +76,7 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @PutMapping("/employee/{id}")
+    @PutMapping("/employees/{id}")
     public ResponseEntity<Empleado> updateEmployee(@PathVariable(value = "id") UUID employeeId,
                                            @Valid @RequestBody Empleado employeeDetails) throws ResourceNotFoundException {
 
