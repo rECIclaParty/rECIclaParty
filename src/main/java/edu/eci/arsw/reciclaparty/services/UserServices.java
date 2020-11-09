@@ -18,6 +18,4 @@ public interface UserServices {
     Empleado updateEmployee(Empleado empleado, UUID employeeId) throws ResourceNotFoundException;
 
 
-
-
 }

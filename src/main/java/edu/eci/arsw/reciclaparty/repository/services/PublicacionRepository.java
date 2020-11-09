@@ -1,5 +1,6 @@
 package edu.eci.arsw.reciclaparty.repository.services;
 
+import edu.eci.arsw.reciclaparty.model.services.Fiesta;
 import edu.eci.arsw.reciclaparty.model.services.Publicacion;
 import edu.eci.arsw.reciclaparty.model.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,8 +13,14 @@ import java.util.UUID;
 
 public interface PublicacionRepository extends JpaRepository<Publicacion, UUID> {
     @Query(value = "select distinct *, 0 AS clazz_ from publicacion", nativeQuery = true)
-    List<User> findAllOnlyOne();
+    List<Publicacion> findAllOnlyOne();
+
+    @Query(value = "select distinct *, 0 AS clazz_ from fiesta", nativeQuery = true)
+    List<Fiesta> findAllPartysOnlyOne();
 
     @Query(value = "select distinct *, 0 AS clazz_ from publicacion where usuario.id = :id", nativeQuery = true)
-    Optional<User> findByIdOnlyOne(@Param("id") UUID id);
+    Optional<Publicacion> findPublicacionByIdOnlyOne(@Param("id") UUID id);
+
+    @Query(value = "select distinct *, 0 AS clazz_ from fiesta where usuario.id = :id", nativeQuery = true)
+    Optional<Publicacion> findFiestaByIdOnlyOne(@Param("id") UUID id);
 }
