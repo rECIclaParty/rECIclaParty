@@ -1,12 +1,0 @@
-
-o	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·…ô–ùÿÿÿÿ8²×ßÿÍ.
-~	java:S116"]Rename this field "fecha_Finalizacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÎÀ›ıÿÿÿÿ8²×ßÿÍ.
-o	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïğ˜Çüÿÿÿÿ8²×ßÿÍ.
-r	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·…ô–ùÿÿÿÿ8²×ßÿÍ.
-o	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÜ®ÿÿÿÿÿ8²×ßÿÍ.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¯Í—øÿÿÿÿ
-r	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øËª¸şÿÿÿÿ8²×ßÿÍ.
-u	java:S116"YRename this field "fecha_Creacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¶ß×8²×ßÿÍ.
-I
-java:S1068	"-Remove this unused "anfitrion" private field.(¶ğŒf8²×ßÿÍ.
-o	java:S100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øËª¸şÿÿÿÿ8²×ßÿÍ.
