@@ -11,8 +11,8 @@ public class Oferta {
     @Id
     private UUID id = UUID.randomUUID();
 
-    private long empleado;
-    private long publicacion;
+    private UUID empleado;
+    private UUID publicacion;
 
     private int puntos;
     private Date fecha;
@@ -20,7 +20,7 @@ public class Oferta {
 
     public Oferta(){}
 
-    public Oferta(long empleado, long publicacion, int puntos, Date fecha, Estado estado) {
+    public Oferta(UUID empleado, UUID publicacion, int puntos, Date fecha, Estado estado) {
         this.empleado = empleado;
         this.publicacion = publicacion;
         this.puntos = puntos;
@@ -36,19 +36,19 @@ public class Oferta {
         this.id = id;
     }
 
-    public long getEmpleado() {
+    public UUID getEmpleado() {
         return empleado;
     }
 
-    public void setEmpleado(long empleado) {
+    public void setEmpleado(UUID empleado) {
         this.empleado = empleado;
     }
 
-    public long getPublicacion() {
+    public UUID getPublicacion() {
         return publicacion;
     }
 
-    public void setPublicacion(long publicacion) {
+    public void setPublicacion(UUID publicacion) {
         this.publicacion = publicacion;
     }
 

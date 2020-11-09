@@ -31,7 +31,7 @@ insert into publicacion(id, fecha, estado, objeto,usuario) values ('18bf0744-743
 
 insert into tag(id, descripcion) values ('18bf0744-7434-46b9-bb95-53905d4538e7','comida');
 
-insert into publicacion_tags(id,publicacion, id_tag) values ('f7bf0744-1484-f6b9-bb95-53905df538e7','18bf0744-7434-46b9-bb95-53905df538e7','18bf0744-7434-46b9-bb95-53905d4538e7');
+insert into publicacion_tags(id,id_publicacion, id_tag) values ('f7bf0744-1484-f6b9-bb95-53905df538e7','18bf0744-7434-46b9-bb95-53905df538e7','18bf0744-7434-46b9-bb95-53905d4538e7');
 
 insert into oferta(id,empleado,publicacion,puntos,fecha,estado) values ('f7bf8744-1484-f6b9-bb95-53905df538e7','6bbf0744-74b4-46b9-bb05-53905d4538e9','18bf0744-7434-46b9-bb95-53905df538e7',0,'2020-11-10','1');
 

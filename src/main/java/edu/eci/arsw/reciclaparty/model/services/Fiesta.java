@@ -4,6 +4,7 @@ package edu.eci.arsw.reciclaparty.model.services;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "fiesta")
@@ -27,7 +28,7 @@ public class Fiesta extends Publicacion {
         this.actividad = actividad;
     }
 
-    public Fiesta(Date fecha, Estado estado, int objeto, long usuario, int participantes, Date hora_inicio, Date hora_final, int puntos, int actividad) {
+    public Fiesta(Date fecha, Estado estado, UUID objeto, UUID usuario, int participantes, Date hora_inicio, Date hora_final, int puntos, int actividad) {
         super(fecha, estado, objeto, usuario);
         this.participantes = participantes;
         this.hora_inicio = hora_inicio;

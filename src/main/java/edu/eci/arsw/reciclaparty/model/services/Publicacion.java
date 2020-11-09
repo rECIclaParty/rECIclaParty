@@ -2,7 +2,6 @@ package edu.eci.arsw.reciclaparty.model.services;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -14,14 +13,14 @@ public class Publicacion {
     private UUID id = UUID.randomUUID();
     private Date fecha;
     private Estado estado;
-    private int objeto;
-    private long usuario;
+    private UUID objeto;
+    private UUID usuario;
 
 
     public Publicacion(){
 
     }
-    public Publicacion(Date fecha, Estado estado, int objeto, long usuario) {
+    public Publicacion(Date fecha, Estado estado, UUID objeto, UUID usuario) {
         this.fecha = fecha;
         this.estado = estado;
         this.objeto = objeto;
@@ -52,19 +51,19 @@ public class Publicacion {
         this.estado = estado;
     }
 
-    public int getObjeto() {
+    public UUID getObjeto() {
         return objeto;
     }
 
-    public void setObjeto(int objeto) {
+    public void setObjeto(UUID objeto) {
         this.objeto = objeto;
     }
 
-    public long getUsuario() {
+    public UUID getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(long usuario) {
+    public void setUsuario(UUID usuario) {
         this.usuario = usuario;
     }
 
