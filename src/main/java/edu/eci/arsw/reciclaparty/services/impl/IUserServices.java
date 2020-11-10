@@ -37,7 +37,6 @@ public class IUserServices implements UserServices {
         return userRepository.findByIdOnlyOne(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
-
     }
 
     @Override
@@ -90,6 +89,23 @@ public class IUserServices implements UserServices {
         Empleado employee = empleadoRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.EMPLOYEE_NOT_FOUND + employeeId));
         empleadoRepository.delete(employee);
+    }
+
+    @Override
+    public String getPoints(UUID userId) throws ResourceNotFoundException {
+        User user = userRepository.findOnlyInUserById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
+        StringBuilder stringBuilder = new StringBuilder("UUID: "+user.getNombre());
+        stringBuilder.append("Nombre:"+user.getNombre());
+        stringBuilder.append("Points: "+user.getPuntos());
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean addPointsToUser(UUID userId, int points) throws ResourceNotFoundException {
+        User user = userRepository.findOnlyInUserById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
+        return user.addPuntos(points);
     }
 
 

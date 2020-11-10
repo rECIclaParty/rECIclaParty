@@ -20,4 +20,10 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     @Query(value = "select distinct *, 0 AS clazz_ from usuario where usuario.id = :id", nativeQuery = true)
     Optional<User> findByIdOnlyOne(@Param("id") UUID id);
 
+    @Query(value = "select *, 0 AS clazz_ from only usuario", nativeQuery = true)
+    List<User> findOnlyInUser();
+
+    @Query(value = "select *, 0 AS clazz_ from only usuario where usuario.id = :id", nativeQuery = true)
+    Optional<User> findOnlyInUserById(@Param("id") UUID id);
+
 }

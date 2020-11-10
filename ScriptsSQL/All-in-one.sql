@@ -25,9 +25,9 @@ insert into empleado (id,nombre,contrasena,correo,telefono,genero,nacimiento,pun
 
 insert into objeto(id, nombre, imagen, descripcion) values ('15bf0744-7434-46b9-bb95-53905df538e7','objeto1','imagen1','descripcion1');
 
-insert into fiesta(id, fecha, estado, objeto,usuario, participantes, hora_inicio, hora_final, puntos, actividad) values ('15bf0744-7434-46b9-bb95-53905df538e9','2020-11-1','A','15bf0744-7434-46b9-bb95-53905df538e7','6bbf0744-74b4-46b9-bb05-53905d4538e7', 1, '2020-11-10','2020-11-10',0,1);
+insert into fiesta(id, fecha, estado, objeto,usuario, participantes, hora_inicio, hora_final, puntos, actividad) values ('15bf0744-7434-46b9-bb95-53905df538e9','2020-11-1','1','15bf0744-7434-46b9-bb95-53905df538e7','6bbf0744-74b4-46b9-bb05-53905d4538e7', 1, '2020-11-10','2020-11-10',0,1);
 
-insert into publicacion(id, fecha, estado, objeto,usuario) values ('18bf0744-7434-46b9-bb95-53905df538e7','2020-11-1','A','15bf0744-7434-46b9-bb95-53905df538e7','6bbf0744-74b4-46b9-bb05-53905d4538e7');
+insert into publicacion(id, fecha, estado, objeto,usuario) values ('18bf0744-7434-46b9-bb95-53905df538e7','2020-11-1','0','15bf0744-7434-46b9-bb95-53905df538e7','6bbf0744-74b4-46b9-bb05-53905d4538e7');
 
 insert into tag(id, descripcion) values ('18bf0744-7434-46b9-bb95-53905d4538e7','comida');
 

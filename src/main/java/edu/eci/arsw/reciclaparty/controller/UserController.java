@@ -13,8 +13,6 @@ import edu.eci.arsw.reciclaparty.model.services.Fiesta;
 import edu.eci.arsw.reciclaparty.model.services.Publicacion;
 import edu.eci.arsw.reciclaparty.model.users.Empleado;
 import edu.eci.arsw.reciclaparty.model.users.User;
-import edu.eci.arsw.reciclaparty.repository.users.EmpleadoRepository;
-import edu.eci.arsw.reciclaparty.repository.users.UserRepository;
 
 
 import edu.eci.arsw.reciclaparty.services.PublicacionServices;
@@ -50,6 +48,18 @@ public class UserController {
     public ResponseEntity<User> getUserById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
         User user = uss.getUserById(userId);
         return ResponseEntity.ok().body(user);
+    }
+
+    @GetMapping("/users/{id}/points")
+    public ResponseEntity<String> getPointsByUser(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
+        String info = uss.getPoints(userId);
+        return ResponseEntity.ok().body(info);
+    }
+
+    @GetMapping("/users/{id}/points/{points}")
+    public ResponseEntity<String> getPointsByUser(@PathVariable(value = "id") UUID userId, @PathVariable(value = "points") int points) throws ResourceNotFoundException {
+        uss.addPointsToUser(userId,points);
+        return ResponseEntity.ok().body("UUID: "+userId+", points: "+points);
     }
 
     @GetMapping("/employees/{id}")
