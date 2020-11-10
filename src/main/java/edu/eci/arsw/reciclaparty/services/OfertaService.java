@@ -9,11 +9,9 @@ public interface OfertaService {
 
     List<Oferta> getAllOfertas();
     List<Oferta> getOfertasByEmployee(UUID employeeID);
-
     List<Oferta>  getOfertasByPublicacion(UUID publicationId);
-
     int getPointsById(UUID ofertaId);
-
     Oferta addOferta(Oferta oferta);
+    void deleteOferta(UUID ofertaID);
 
 }

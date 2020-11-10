@@ -8,5 +8,6 @@ import java.util.UUID;
 public interface ObjetoService {
     List<Objeto> getAllObjetos();
     Objeto getObjetoById(UUID id);
-
+    Objeto addObjeto(Objeto objeto);
+    void deleteObjeto(UUID id);
 }

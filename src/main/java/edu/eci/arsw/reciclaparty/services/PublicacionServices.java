@@ -12,9 +12,12 @@ import java.util.UUID;
 public interface PublicacionServices {
     List<Publicacion> getAllPublicaciones();
     List<Fiesta> getAllFiestas();
-    List<Publicacion> getAllPublicacionesByUser(UUID id);
-    List<Fiesta> getAllFiestasByUser(UUID id);
+    List<Publicacion> getAllPublicacionesByUser(UUID userId);
+    List<Fiesta> getAllFiestasByUser(UUID userId);
     Publicacion addPublicacion(Publicacion publicacion);
+    Fiesta addPublicacion(Fiesta fiesta);
+    void deletePublicacion(UUID publicacionId);
+    void deleteFiesta(UUID fiestaId);
 
 
 

@@ -42,4 +42,11 @@ public class IOfertaService implements OfertaService {
         return ofertaRepository.save(oferta);
     }
 
+    @Override
+    public void deleteOferta(UUID ofertaID) {
+        Oferta oferta = ofertaRepository.getOne(ofertaID);
+        ofertaRepository.delete(oferta);
+
+    }
+
 }
