@@ -13,7 +13,7 @@ public interface PublicacionServices {
     List<Publicacion> getAllPublicaciones();
     List<Fiesta> getAllFiestas();
     List<Publicacion> getAllPublicacionesByUser(UUID id);
-    List<Publicacion> getAllFiestasByUser(UUID id);
+    List<Fiesta> getAllFiestasByUser(UUID id);
     Publicacion addPublicacion(Publicacion publicacion);
 
 

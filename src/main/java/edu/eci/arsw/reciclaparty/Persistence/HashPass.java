@@ -1,4 +1,4 @@
-package edu.eci.arsw.reciclaparty.controller.Persistence;
+package edu.eci.arsw.reciclaparty.Persistence;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

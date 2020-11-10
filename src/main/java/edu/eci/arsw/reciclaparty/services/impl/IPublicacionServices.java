@@ -29,7 +29,7 @@ public class IPublicacionServices implements PublicacionServices {
 
     @Override
     public List<Fiesta> getAllFiestas() {
-        return publicacionRepository.findAllPartysOnlyOne();
+        return fiestaRepository.findAllPartysOnlyOne();
     }
 
     @Override
@@ -39,8 +39,9 @@ public class IPublicacionServices implements PublicacionServices {
 
 
     @Override
-    public List<Publicacion> getAllFiestasByUser(UUID id) {
-        return publicacionRepository.findFiestaByIdOnlyOne(id);
+    public List<Fiesta> getAllFiestasByUser(UUID id){
+        
+        return fiestaRepository.findFiestaByIdOnlyOne(id);
     }
 
 
