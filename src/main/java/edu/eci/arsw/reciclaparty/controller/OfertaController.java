@@ -1,7 +1,6 @@
 package edu.eci.arsw.reciclaparty.controller;
 
 import edu.eci.arsw.reciclaparty.model.services.Oferta;
-import edu.eci.arsw.reciclaparty.model.users.User;
 import edu.eci.arsw.reciclaparty.services.OfertaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
