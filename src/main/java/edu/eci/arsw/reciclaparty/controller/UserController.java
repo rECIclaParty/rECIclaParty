@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
@@ -31,9 +32,7 @@ public class UserController {
     private UserServices uss;
 
 
-    @Autowired
-    @Qualifier("IPublicacionServices")
-    private PublicacionServices publicacionServices;
+
 
     @GetMapping("/users")
     public List<Usuario> getAllUsers() {
@@ -101,30 +100,6 @@ public class UserController {
         return response;
     }
 
-    @GetMapping("/publications")
-    public List<Publicacion> getAllPublications(){
-        return publicacionServices.getAllPublicaciones();
-    }
-
-    @GetMapping("/publications/{id}")
-    public List<Publicacion> getAllPublicationsByUser(@PathVariable(value = "id") UUID userId){
-        return publicacionServices.getAllPublicacionesByUser(userId);
-    }
-
-    @PostMapping("/publications")
-    public Publicacion createPublication(@Valid @RequestBody Publicacion publicacion) {
-        return publicacionServices.addPublicacion(publicacion);
-    }
-
-    @GetMapping("/parties")
-    public List<Fiesta> getAllParties(){
-        return publicacionServices.getAllFiestas();
-    }
-
-    @GetMapping("/parties/{id}")
-    public List<Publicacion> getAllPartiesByUser(@PathVariable(value = "id") UUID userId){
-        return publicacionServices.getAllFiestasByUser(userId);
-    }
 
 
 }

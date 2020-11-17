@@ -1,5 +1,7 @@
 package edu.eci.arsw.reciclaparty.model.services;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;

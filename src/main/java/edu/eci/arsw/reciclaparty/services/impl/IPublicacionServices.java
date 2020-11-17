@@ -26,24 +26,43 @@ public class IPublicacionServices implements PublicacionServices {
 
     @Override
     public List<Fiesta> getAllFiestas() {
-        return publicacionRepository.findAllPartysOnlyOne();
+        return fiestaRepository.findAllPartysOnlyOne();
     }
 
     @Override
-    public List<Publicacion> getAllPublicacionesByUser(UUID id) {
-        return publicacionRepository.findPublicacionByIdOnlyOne(id);
+    public List<Publicacion> getAllPublicacionesByUser(UUID userId) {
+        return publicacionRepository.findPublicacionByIdOnlyOne(userId);
     }
 
 
     @Override
-    public List<Publicacion> getAllFiestasByUser(UUID id) {
-        return publicacionRepository.findFiestaByIdOnlyOne(id);
+    public List<Fiesta> getAllFiestasByUser(UUID userId){
+        
+        return fiestaRepository.findFiestaByIdOnlyOne(userId);
     }
 
 
 
     @Override
     public Publicacion addPublicacion(Publicacion publicacion) {
+
         return publicacionRepository.save(publicacion);
+    }
+
+    @Override
+    public Fiesta addPublicacion(Fiesta fiesta) {
+        return fiestaRepository.save(fiesta);
+    }
+
+    @Override
+    public void deletePublicacion(UUID publicacionId) {
+        Publicacion publicacion = publicacionRepository.getOne(publicacionId);
+        publicacionRepository.delete(publicacion);
+    }
+
+    @Override
+    public void deleteFiesta(UUID fiestaId) {
+        Fiesta fiesta = fiestaRepository.getOne(fiestaId);
+        publicacionRepository.delete(fiesta);
     }
 }
