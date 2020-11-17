@@ -12,7 +12,7 @@ import edu.eci.arsw.reciclaparty.exception.ResourceNotFoundException;
 import edu.eci.arsw.reciclaparty.model.services.Fiesta;
 import edu.eci.arsw.reciclaparty.model.services.Publicacion;
 import edu.eci.arsw.reciclaparty.model.users.Empleado;
-import edu.eci.arsw.reciclaparty.model.users.User;
+import edu.eci.arsw.reciclaparty.model.users.Usuario;
 
 
 import edu.eci.arsw.reciclaparty.services.PublicacionServices;
@@ -36,7 +36,7 @@ public class UserController {
     private PublicacionServices publicacionServices;
 
     @GetMapping("/users")
-    public List<User> getAllUsers() {
+    public List<Usuario> getAllUsers() {
         return uss.getAllUsers();
     }
 
@@ -46,9 +46,9 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
-        User user = uss.getUserById(userId);
-        return ResponseEntity.ok().body(user);
+    public ResponseEntity<Usuario> getUserById(@PathVariable(value = "id") UUID userId) throws ResourceNotFoundException {
+        Usuario usuario = uss.getUserById(userId);
+        return ResponseEntity.ok().body(usuario);
     }
 
     @GetMapping("/users/{id}/points")
@@ -69,22 +69,12 @@ public class UserController {
         return ResponseEntity.ok().body(employee);
     }
 
-    @PostMapping("/users")
-    public User createUser(@Valid @RequestBody User user) {
-        return uss.addUser(user);
-    }
-
-    @PostMapping("/employees")
-    public Empleado createOtherUser(@Valid @RequestBody Empleado employee) {
-        return uss.addEmployee(employee);
-    }
-
     @PutMapping("/users/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable(value = "id") UUID userId,
-                                                   @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
+    public ResponseEntity<Usuario> updateUser(@PathVariable(value = "id") UUID userId,
+                                              @Valid @RequestBody Usuario usuarioDetails) throws ResourceNotFoundException {
 
-        final User updatedUser = uss.updateUser(userDetails,userId);
-        return ResponseEntity.ok(updatedUser);
+        final Usuario updatedUsuario = uss.updateUser(usuarioDetails,userId);
+        return ResponseEntity.ok(updatedUsuario);
     }
 
     @PutMapping("/employees/{id}")

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name="empleado")
-public class Empleado extends User{
+public class Empleado extends Usuario {
 
     private UUID asociacion;
 

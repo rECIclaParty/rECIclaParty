@@ -2,13 +2,17 @@ package edu.eci.arsw.reciclaparty.services.impl;
 
 import edu.eci.arsw.reciclaparty.exception.ResourceNotFoundException;
 import edu.eci.arsw.reciclaparty.model.users.Empleado;
-import edu.eci.arsw.reciclaparty.model.users.User;
+import edu.eci.arsw.reciclaparty.model.users.Usuario;
 import edu.eci.arsw.reciclaparty.repository.users.*;
 import edu.eci.arsw.reciclaparty.services.UserServices;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -23,7 +27,7 @@ public class IUserServices implements UserServices {
     private EmpleadoRepository empleadoRepository;
 
     @Override
-    public List<User> getAllUsers() {
+    public List<Usuario> getAllUsers() {
         return userRepository.findAllOnlyOne();
     }
 
@@ -33,7 +37,7 @@ public class IUserServices implements UserServices {
     }
 
     @Override
-    public User getUserById(UUID userId) throws ResourceNotFoundException {
+    public Usuario getUserById(UUID userId) throws ResourceNotFoundException {
         return userRepository.findByIdOnlyOne(userId)
                 .orElseThrow(() ->
                         new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
@@ -47,8 +51,8 @@ public class IUserServices implements UserServices {
     }
 
     @Override
-    public User addUser(User user) {
-        return userRepository.save(user);
+    public Usuario addUser(Usuario usuario) {
+        return userRepository.save(usuario);
     }
 
     @Override
@@ -57,8 +61,8 @@ public class IUserServices implements UserServices {
     }
 
     @Override
-    public User updateUser(User usuario, UUID userId) throws ResourceNotFoundException {
-        User user = userRepository.findById(userId)
+    public Usuario updateUser(Usuario usuario, UUID userId) throws ResourceNotFoundException {
+        Usuario user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
         user.setNombre(usuario.getNombre());
         user.setTelefono(usuario.getTelefono());
@@ -79,9 +83,9 @@ public class IUserServices implements UserServices {
     @Override
     public void deleteUser(UUID userId) throws ResourceNotFoundException {
 
-        User user = userRepository.findById(userId)
+        Usuario usuario = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
-        userRepository.delete(user);
+        userRepository.delete(usuario);
     }
 
     @Override
@@ -93,19 +97,45 @@ public class IUserServices implements UserServices {
 
     @Override
     public String getPoints(UUID userId) throws ResourceNotFoundException {
-        User user = userRepository.findOnlyInUserById(userId)
+        Usuario usuario = userRepository.findOnlyInUserById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
-        StringBuilder stringBuilder = new StringBuilder("UUID: "+user.getNombre());
-        stringBuilder.append("Nombre:"+user.getNombre());
-        stringBuilder.append("Points: "+user.getPuntos());
+        StringBuilder stringBuilder = new StringBuilder("UUID: "+ usuario.getNombre());
+        stringBuilder.append("Nombre:"+ usuario.getNombre());
+        stringBuilder.append("Points: "+ usuario.getPuntos());
         return stringBuilder.toString();
     }
 
     @Override
     public boolean addPointsToUser(UUID userId, int points) throws ResourceNotFoundException {
-        User user = userRepository.findOnlyInUserById(userId)
+        Usuario usuario = userRepository.findOnlyInUserById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException(ResourceNotFoundException.USER_NOT_FOUND + userId));
-        return user.addPuntos(points);
+        return usuario.addPuntos(points);
+    }
+
+    @Override
+    public String login(String correo, String password) {
+        Optional<Usuario> user = userRepository.login(correo,password);
+        if(user.isPresent()){
+            String token = UUID.randomUUID().toString();
+            Usuario custom= user.get();
+            custom.setToken(token);
+            userRepository.save(custom);
+            return token;
+        }
+
+        return StringUtils.EMPTY;
+    }
+
+    @Override
+    public Optional<User> findByToken(String token) {
+        Optional<Usuario> usuario= userRepository.findByToken(token);
+        if(usuario.isPresent()){
+            Usuario customer1 = usuario.get();
+            User user= new User(customer1.getCorreo(), customer1.getPassword(), true, true, true, true,
+                    AuthorityUtils.createAuthorityList("USER"));
+            return Optional.of(user);
+        }
+        return  Optional.empty();
     }
 
 

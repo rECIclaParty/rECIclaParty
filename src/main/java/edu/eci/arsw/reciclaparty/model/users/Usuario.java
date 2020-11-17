@@ -8,7 +8,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "usuario")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class User {
+public class Usuario {
     @Id
     private UUID id = UUID.randomUUID();
     @Column(nullable = false)
@@ -21,12 +21,13 @@ public class User {
     private Genre genero;
     private Date nacimiento;
     private int puntos;
+    private String token;
 
-    public User(){
+    public Usuario(){
 
     }
 
-    public User(String nombre, String password, String correo, String telefono, Genre genero, Date nacimiento, int puntos) {
+    public Usuario(String nombre, String password, String correo, String telefono, Genre genero, Date nacimiento, int puntos) {
         this.nombre = nombre;
         this.password = password;
         this.correo = correo;
@@ -34,6 +35,17 @@ public class User {
         this.genero = genero;
         this.nacimiento = nacimiento;
         this.puntos = puntos;
+    }
+
+    public Usuario(String nombre, String password, String correo, String telefono, Genre genero, Date nacimiento, int puntos, String token) {
+        this.nombre = nombre;
+        this.password = password;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.genero = genero;
+        this.nacimiento = nacimiento;
+        this.puntos = puntos;
+        this.token = token;
     }
 
     public UUID getId() {
@@ -94,6 +106,8 @@ public class User {
         this.nacimiento = nacimiento;
     }
 
+
+
     public int getPuntos() {
         return puntos;
     }
@@ -106,9 +120,18 @@ public class User {
         this.puntos+=puntos;
         return true;
     }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
+        return "Usuario{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", password='" + password + '\'' +
@@ -117,6 +140,7 @@ public class User {
                 ", genero=" + genero +
                 ", nacimiento=" + nacimiento +
                 ", puntos=" + puntos +
+                ", token='" + token + '\'' +
                 '}';
     }
 }
